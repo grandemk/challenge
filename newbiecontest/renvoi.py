@@ -19,9 +19,7 @@ class Renvoi(Programmation):
         return result
 
     def valid_number(self, number):
-        response_params = {"solution":number}
-        r = self.connection.get(self.verif_url, params=response_params)
-        return r
+        return self.connection.valid(self.verif_url, number)
 
     def solve_chall(self):
         result = self.get_number()

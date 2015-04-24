@@ -1,11 +1,12 @@
 #!/usr/bin/env python
 from renvoi import Renvoi
+from racine import Racine
 import argparse
 
 
 class ChallengeSolver(object):
     def __init__(self, trace_level):
-        self.challs = {"Renvoi"}
+        self.challs = {"Renvoi", "Racine"}
         self.trace_level = trace_level
 
     def print_list_challs(self):
@@ -18,6 +19,8 @@ class ChallengeSolver(object):
             return
         if chall_name == "Renvoi":
             chall = Renvoi(self.trace_level)
+        elif chall_name == "Racine":
+            chall = Racine(self.trace_level)
 
         soluce = chall.solve_chall()
         chall.print_soluce(soluce)

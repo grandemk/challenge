@@ -12,6 +12,11 @@ class Connection(object):
         self.print_debug("Response: {}".format(r.text), 3)
         return r
 
+    def valid(self, url, solution):
+        response_params = {"solution":solution}
+        return self.get(url, params=response_params)
+
+
     def _get_with_connection(self, url):
         pass
 
