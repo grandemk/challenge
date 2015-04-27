@@ -175,7 +175,6 @@ class EquationLL1Parser(object):
     def parse(self):
         e = self.E()
         if self.tokens[0].type == "$":
-            print("Parsing succeeded\n")
             return e
         raise ParsingException("Not in the grammar")
 
