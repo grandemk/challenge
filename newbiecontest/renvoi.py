@@ -3,7 +3,7 @@ import sys
 from connection import NewbieContestConnection
 from challenge import Programmation
 
-class Renvoi(Programmation):
+class RenvoiChall(Programmation):
     def __init__(self, trace_level):
         self.connection = NewbieContestConnection(trace_level)
         self.chall_url = "{}/prog1.php".format(self.connection.base_url)
@@ -29,11 +29,9 @@ class Renvoi(Programmation):
         soluce = self.valid_number(result)
         return soluce
 
-    def verify_chall_solved(self, soluce):
-        return soluce.find("Bravo") != -1
 
 if "__main__" == __name__:
-    renvoi = Renvoi(3)
+    renvoi = RenvoiChall(3)
     soluce = renvoi.solve_chall()
     renvoi.print_soluce(soluce)
 

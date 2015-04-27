@@ -4,7 +4,7 @@ from connection import NewbieContestConnection
 from challenge import Programmation
 from math import sqrt
 
-class Racine(Programmation):
+class RacineChall(Programmation):
     def __init__(self, trace_level):
         self.connection = NewbieContestConnection(trace_level)
         self.a_url = "{}/prog3_1.php".format(self.connection.base_url)
@@ -37,7 +37,7 @@ class Racine(Programmation):
 
 
 if "__main__" == __name__:
-    racine = Racine(3)
+    racine = RacineChall(3)
     soluce = racine.solve_chall()
     racine.print_soluce(soluce)
 

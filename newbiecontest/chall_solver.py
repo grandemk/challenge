@@ -1,26 +1,29 @@
 #!/usr/bin/env python
-from renvoi import Renvoi
-from racine import Racine
+from renvoi import RenvoiChall
+from racine import RacineChall
+from equation import EquationChall
 import argparse
 
 
 class ChallengeSolver(object):
     def __init__(self, trace_level):
-        self.challs = {"Renvoi", "Racine"}
+        self.challs = {"Renvoi", "Racine", "Equation"}
         self.trace_level = trace_level
 
     def print_list_challs(self):
         for chall in self.challs:
-            print chall
+            print(chall)
 
     def solve_chall(self, chall_name):
         if not chall_name in self.challs:
             print("I don't know this chall\n")
             return
         if chall_name == "Renvoi":
-            chall = Renvoi(self.trace_level)
+            chall = RenvoiChall(self.trace_level)
         elif chall_name == "Racine":
-            chall = Racine(self.trace_level)
+            chall = RacineChall(self.trace_level)
+        elif chall_name == "Equation":
+            chall = EquationChall(self.trace_level)
 
         soluce = chall.solve_chall()
         chall.print_soluce(soluce)
