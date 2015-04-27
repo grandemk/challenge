@@ -1,0 +1,3 @@
+[submodule "pwntools"]
+	path = pwntools
+	url = https://github.com/Gallopsled/pwntools
