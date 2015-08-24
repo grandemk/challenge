@@ -37,11 +37,11 @@ unsigned char check_f[371] = {
     0x10, 0xb8, 0x01, 0x00, 0x00, 0x00, 0xc9, 0xc3, };
 int main(void)
 {
-    printf("unsigned char check_f[371] = {");
+    printf("unsigned char check_f[371] = {\n");
     for (int i=0; i<_BUFFER_SIZE; ++i) {
         check_f[i] ^= '$';
         printf("0x%02x, ", check_f[i]);
-        if (i % 10 == 0)
+        if (i % 10 == 9)
             printf("\n");
     }
     printf("};");
