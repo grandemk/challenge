@@ -9,10 +9,7 @@ trap 'clean' EXIT
 
 function clean
 {
-    if [ -f $create_check ]
-    then
-        rm $create_check
-    fi
+    rm "$tmpDir" -r
 
     if [ -f $scriptDir/create_check ]
     then
