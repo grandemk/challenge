@@ -30,7 +30,7 @@ function create_check_fcn
 {
     echo "[-] Creating check function"
     push_dir $scriptDir 
-    make > /dev/null
+    make main > /dev/null
     r2 chall -i $scriptDir/get_check.r2 -q > $tmpDir/check_f.c
     pop_dir #$scriptDir
 }
@@ -48,9 +48,15 @@ function obfuscate_check
 {
     echo "[-] obfuscating check function"
     push_dir $scriptDir
-    ./create_check
-    echo
+    ./create_check > check2.c
     pop_dir #$scriptDir
+}
+
+function create_main2
+{
+	echo "[-] creating chall"
+	python process_main.py
+	make main2 > /dev/null
 }
 
 function main
@@ -58,6 +64,7 @@ function main
     create_check_fcn
     create_obfuscator
     obfuscate_check
+	create_main2
 }
 
 main "$@"

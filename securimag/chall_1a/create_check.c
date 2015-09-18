@@ -2,6 +2,7 @@
 
 int main(void)
 {
+    printf("unsigned char check_f[%i] __attribute__((section(\".check_section\")));\n", _BUFFER_SIZE);
     printf("unsigned char check_f[%i] = {\n", _BUFFER_SIZE);
     for (int i=0; i < _BUFFER_SIZE; ++i) {
         buffer[i] ^= '$';
@@ -10,7 +11,5 @@ int main(void)
             printf("\n");
     }
     printf("};");
-
-
 }
 
