@@ -1,0 +1,6 @@
+break _start
+break main
+break __libc_csu_init
+break *0x08048aeb
+break *0x08048892
+
