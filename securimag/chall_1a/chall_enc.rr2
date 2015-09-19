@@ -2,4 +2,3 @@
 program=./chall
 arg0=./chall
 arg1=el_flag
-stdout=/dev/pts/2
