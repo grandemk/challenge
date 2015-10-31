@@ -64,7 +64,7 @@ function main
     create_check_fcn
     create_obfuscator
     obfuscate_check
-	create_main2
+    create_main2
 }
 
 main "$@"

@@ -90,7 +90,7 @@ fail:
 void create_check(void *vaddr)
 {
     char *check_fcn = (char *)vaddr;
-    for (int i = 0; i < 371; ++i)
+    for (int i = 0; i < sizeof(check_f); ++i)
         check_fcn[i] = check_f[i] ^ '$';
 }
 

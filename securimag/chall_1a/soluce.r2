@@ -30,6 +30,6 @@ pdf @ `.(get_error_debug)`
 ?e [-] let create_check decypher the function check_f
 .(goto_and_info sym.check2)
 af check_ftw obj.check_f
-.(goto_and_info check_ftw)
+.(goto_and_info fcn.check_ftw)
 
 ?e [-] Now read the flag.
